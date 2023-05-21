@@ -1,5 +1,6 @@
 import "@/styles/globals.css"
 import { Metadata } from "next"
+import Script from 'next/script';
 
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
@@ -33,7 +34,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       <html lang="en" suppressHydrationWarning>
-        <head />
+        <head>
+          
+        <Script src="https://cdn.jsdelivr.net/npm/webtorrent@1.9.6/webtorrent.min.js" strategy="beforeInteractive"></Script>
+
+        </head>
         <body
           className={cn(
             "min-h-screen bg-background font-sans antialiased",
